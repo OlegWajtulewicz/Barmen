@@ -1,0 +1,51 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.title-section {
+    position: relative;
+    color: var(--headlineH1Color);
+    font-family: var(--headlineH1FontFamily);
+    @include adaptiveValue("font-size", 56, 32);
+    font-weight: 900;
+    font-style: var(--headlineH1FontStyle);
+    line-height: var(--headlineH1LineHeight);
+    
+}
+.title-intro {
+    color: var(--subTitleH3Color);
+    font-family: var(--subTitleH3FontFamily);
+    //font-size: var(--subTitleH3FontSize);
+    @include adaptiveValue("font-size", 24, 18);
+    font-weight: var(--subTitleH3FontWeight);
+    font-style: var(--subTitleH3FontStyle);
+    line-height: var(--subTitleH3LineHeight);
+    
+    margin-bottom: toRem(24);
+}
+.title-item {
+    color: var(--subTitleH4Color);
+    font-family: var(--subTitleH4FontFamily);
+    font-size: var(--subTitleH4FontSize);
+    font-weight: var(--subTitleH4FontWeight);
+    font-style: var(--subTitleH4FontStyle);
+    line-height: var(--subTitleH4LineHeight);
+    
+}
+//========================================================================================================================================================
+body {
+    //position: relative;
+    //overflow: hidden;
+}
+.box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #e0e0e0;
+    transform: translate(100%, 0);
+    z-index: 100;
+    @media (max-width:$mobile){
+         display: none; 
+    }
+}

@@ -1,0 +1,53 @@
+<div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрити</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="callback" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close icon-Cross"></button>
+
+			<form data-ajax data-popup-message="#thanks" data-validate data-required id="form" class="feed-form form__body" action="files/sendmail/sendmail.php" method="POST">
+				<input required name="name" placeholder="Name" type="text" class="form__input input">
+				<input required name="phone"  placeholder="Phone" type="tel" class="form__input input">
+				<input data-required="email" name="email"  placeholder="E-mail" type="email" class="form__input input ">
+	 
+				<button type="submit" class="button">ОСТАВИТЬ ЗАЯВКУ</button>   
+			</form>
+
+		</div>
+	</div>
+</div>
+
+
+<div id="#" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close icon-Cross"></button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="thanks" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close icon-Cross"></button>
+			 <div class="popup__text">
+				
+	<div class="modal__subtitle">Thanks! Your message was sent successfully.</div>
+	
+			</div>  
+		</div>
+	</div>
+</div>

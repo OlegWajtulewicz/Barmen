@@ -1,0 +1,136 @@
+//====================================================================================================
+.contacts-form {
+    @include adaptiveValue("padding-top", 160, 100);
+    @include adaptiveValue("padding-bottom", 60, 30);
+    background: #ffffff;
+    .wrapper-contacts__titl  {
+        margin-bottom: 30px;
+        color: var(--headlineH1Color);
+        font-family: var(--headlineH1FontFamily);
+        //font-size: var(--headlineH1FontSize);
+        font-weight: var(--headlineH1FontWeight);
+        font-style: var(--headlineH1FontStyle);
+        line-height: var(--headlineH1LineHeight);
+    }
+    .wrapper-contacts__descr {
+        color: var(--bodyText2Color);
+        @include adaptiveValue("font-size", 16, 14);
+        font-size: var(--bodyText2FontSize);
+        font-weight: var(--bodyText2FontWeight);
+        line-height: 130%;
+    }
+    .contacts__container {
+        @media (max-width:$tablet){
+            row-gap: toRem(60);
+        }
+    }
+}
+.working {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__title  {
+        margin-bottom: 55px;
+        color: var(--headlineH1Color);
+        font-family: var(--headlineH1FontFamily);
+        //font-size: var(--headlineH1FontSize);
+        font-weight: var(--headlineH1FontWeight);
+        font-style: var(--headlineH1FontStyle);
+        line-height: var(--headlineH1LineHeight);
+    }
+
+    // .working__body
+
+    &__body {
+    }
+
+    // .working__table
+
+    &__table {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: toRem(26);
+        max-width: toRem(380);
+    }
+
+    // .working__label
+
+    &__label {
+        color: var(--subTitleH3Color);
+        font-family: var(--subTitleH3FontFamily);
+        font-size: var(--subTitleH3FontSize);
+        font-weight: var(--subTitleH3FontWeight);
+        font-style: var(--subTitleH3FontStyle);
+        line-height: var(--subTitleH3LineHeight);
+    }
+
+    // .working__value
+
+    &__value {
+        white-space: nowrap;
+        color: var(--bodyText3Color);
+        font-family: var(--bodyText3FontFamily);
+        font-size: var(--bodyText3FontSize);
+        font-weight: var(--bodyText3FontWeight);
+        font-style: var(--bodyText3FontStyle);
+        line-height: var(--bodyText3LineHeight);
+    }
+}
+//========================================================================================================================================================
+.contacts-map {
+    border: 10px solid #000000;
+
+    // .contacts-map__map
+
+    &__map {
+        width: 100%;
+        @include adaptiveValue("height", 800, 250);
+        iframe {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

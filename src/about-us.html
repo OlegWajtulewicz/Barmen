@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"AboutUs"
+	})
+	<body data-barba="wrapper">
+		<div class="box"></div>
+		<div class="wrapper" data-barba="container" data-barba-namespace="AboutUs">
+			@@include('html/_header.htm',{})
+			<main  class="page page_corporate-client">
+				<section class="page__welcom welcom-block">
+					<div class="welcom-block__container">
+						<div class="welcom-block__info">
+							<h3 class="welcom-block__intro title-intro">About Us</h3>
+							<h2 class="welcom-block__title title-section">Welcome</h2>
+							<hr>
+							<div class="welcom-block__descr">
+								Achieve success with our marketing courses! Whether you're looking to increase your knowledge in the field of marketing or just getting started, we have the perfect course for you. Our comprehensive program covers all areas of marketing, from digital advertising and analytics to traditional methods and more. With experienced instructors and innovative technology at your fingertips, unlock a brighter future with our marketing courses today!
+							</div>
+						</div>
+						<div class="welcom-block__media">
+						<div class="welcom-block__image">
+							<img src="@img/corpo-client/corp1.jpg" alt="corp1">
+						</div>
+						<div class="welcom-block__image">
+							<img src="@img/corpo-client/corp2.jpg" alt="corp2">
+						</div>
+					</div>
+					</div>
+				</section>
+                <section class="page__courses courses" id="courses">
+					<div class="courses__container">
+						<h2 class="courses__title title-section">Our courses</h2>
+						<div class="courses__items">
+
+							<div class="courses__item item-courses">
+								<div class="item-courses__title title-item">Content Marketing</div>
+								<div class="item-courses__descr">
+									Our website offers tailored courses on marketing topics to help you understand the fundamentals of successful campaigns.
+								</div>
+							</div>
+
+							<div class="courses__item item-courses">
+								<div class="item-courses__title title-item">Brand Management</div>
+								<div class="item-courses__descr">
+									Our website provides comprehensive brand management services to help market courses through strategic online marketing.
+								</div>
+							</div>
+
+							<div class="courses__item item-courses">
+								<div class="item-courses__title title-item">Social Media Marketing</div>
+								<div class="item-courses__descr">Our website provides comprehensive marketing courses to enhance your social media marketing skills.</div>
+							</div>
+
+							<div class="courses__item item-courses">
+								<div class="item-courses__title title-item">Search Engine Optimization</div>
+								<div class="item-courses__descr">
+									SEO service that boosts visibility of marketing courses website by improving on-page content and promoting through relevant platforms.
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-title">
+					<div class="section-title__container">
+						<h2 class="section-title__title title-section">Learn the Strategies of Successful Marketing</h2>
+					</div>
+				</section>
+				<section class="page__corpo-slider corpo-slider">
+					<div class="corpo-slider__container">
+						<!-- Оболонка слайдера -->
+						<div class="corpo-slider__slider swiper">
+							<!-- Частина слайдера, що рухається -->
+							<div class="corpo-slider__wrapper swiper-wrapper">
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/corpo-client/slider1/01.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/corpo-client/slider1/02.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/corpo-client/slider1/03.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/corpo-client/slider1/04.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/corpo-client/slider1/05.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/corpo-client/slider1/06.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+							</div>
+							<!-- Якщо потрібна пагінація -->
+							<div class="swiper-pagination"></div>
+							<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
+							<button type="button" class="swiper-button-prev corpo-slider__prev icon-Right-chevron"></button>
+							<button type="button" class="swiper-button-next corpo-slider__next icon-Right-chevron"></button>
+							
+						</div>
+					</div>
+
+				</section>
+				<section class="page__corpo-form corpo-form">
+					<div class="contacts__container">
+						
+						<div class="contacts__wrapper wrapper-contacts">
+							<div class="wrapper-contacts__intro">We will answer within 5 minutes</div>
+							<h3 class="wrapper-contacts__title">Contact us</h3>
+							<div class="wrapper-contacts__descr">Leave a request and we will contact you</div>
+							<hr>
+							<div class="wrapper-contacts__form">
+								<form data-ajax data-validate data-required data-popup-message="#thanks" method="POST" action="files/sendmail/sendmail.php" enctype="multipart/form-data" class="tab-body-form__form form">
+									<div class="form-form">
+
+										<div class="form__item first">
+											<label for="first-name" class="form__label">First Name*</label>
+											<input type="text" id="first-name" name="first-name"  placeholder="Your first name" class="form__input input " required> 
+										</div> 
+
+										<div class="form__item last">
+											<label for="last-name" class="form__label">Last Name*</label>
+											<input type="text" id="last-name" name="last-name"  placeholder="Your last name" class="form__input input " required> 
+										</div>
+
+										<div class="form__item email">
+											<label for="email" class="form__label">Email address</label>
+											<input required id="email" type="email" name="email" placeholder="Your working email" class="form__input input " >
+										</div>
+
+										<div class="form__item phone">
+											<label for="phone" class="form__label">Phone*</label>
+											<input required type="tel" id="phone" name="phone" placeholder="Your phone number" class="form__input input">
+										</div>
+									</div>
+									 <div class="form__item ">
+										<label for="message" class="form__label">Notes</label>
+										<textarea id="message" name="message" placeholder="Your message" class="form__input input"></textarea>
+									</div>
+									<button class="wrapper-contacts__btn button">SUBMIT</button>
+								</form>
+							</div>
+						</div>
+						<div class="contacts__image">
+							<img src="@img/home/contacts/bg-c.jpg" alt="contacts">
+						</div>
+					</div>
+				</section>
+
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	
+	</body>
+</html>
