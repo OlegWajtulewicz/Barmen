@@ -17,7 +17,7 @@
     --pageContainer: 1150px;
     --primaryColor: #FFFFFF;
     --secondaryColor: #282828;
-    --accentColor: #FAD40F;
+    --accentColor: #81fa0f6b;
     --mutedColor: #282828;
     --fifthColor: #F8F5E2;
     --sixthColor: #E9E8ED;
@@ -27,11 +27,11 @@
     --transparentColor: transparent;
     --primaryBorder: 1px solid #FFFFFF;
     --secondaryBorder: 1px solid #282828;
-    --accentBorder: 1px solid #FAD40F;
+    --accentBorder: 1px solid #81fa0f;
     --borderRadius: 0;
     --headerBg: #FFFFFF;
     --headerColor: #282828;
-    --headerHoverColor: #FAD40F;
+    --headerHoverColor: #0a5c2c;
     --headerActiveColor: #282828;
     --headerFontFamily: 'Raleway', sans-serif;
     --headerFontSize: 16px;
@@ -81,6 +81,7 @@
     --subTitleH4LineHeight: 1.2;
     --subTitleH4TextTransform: inherit;
     --subTitleH4TextDecoration: inherit;
+    --bodyTextColor: #0a5c2c;
     --bodyText1Color: #282828;
     --bodyText1FontFamily: 'Raleway', sans-serif;
     --bodyText1FontSize: 18px;
@@ -89,7 +90,7 @@
     --bodyText1LineHeight: 1.6;
     --bodyText1TextTransform: inherit;
     --bodyText1TextDecoration: inherit;
-    --bodyText2Color: #282828;
+    --bodyText2Color: #043f1d;
     --bodyText2FontFamily: 'Raleway', sans-serif;
     --bodyText2FontSize: 16px;
     --bodyText2FontWeight: 400;
@@ -179,7 +180,7 @@
     --btnBorderRadius: 0px;
     --btnBorderWidth: 1px;
     --btnBorderStyle: solid;
-    --btnPrimaryBg: #FAD40F;
+    --btnPrimaryBg: #81fa0f;
     --btnPrimaryHoverBg: #FFFFFF;
     --btnPrimaryColor: #282828;
     --btnPrimaryHoverColor: #282828;
@@ -221,13 +222,9 @@
     --tabFontStyle: normal;
     --tabTextTransform: inherit;
     --tabTextDecoration: inherit;
-    --overlayBg: rgba(255,255,255, 0.5);
+    --overlayBg: rgba(255, 255, 255, 0.418);
     --overlayColor: #FAD40F;
-    --imageBackdropFilter: 1px;
-    --sliderLeftNavIcon: url(https://img2.hocoos.com/cache/img-pack/402/w-352/h-352/x-0/y-0/img-pack/402/left-16.png);
-    --sliderRightNavIcon: url(https://img2.hocoos.com/cache/img-pack/402/w-352/h-352/x-0/y-0/img-pack/402/right-15.png);
-    --sliderBottomLeftNavIcon: url(https://img2.hocoos.com/cache/img-pack/402/w-352/h-352/x-0/y-0/img-pack/402/left-17.png);
-    --sliderBottomRightNavIcon: url(https://img2.hocoos.com/cache/img-pack/402/w-352/h-352/x-0/y-0/img-pack/402/right-17.png);
+    --imageBackdropFilter: 5px;
     --widgetTintBackgroundColor: #e0e0e0;
     --storeBodyBg: #ffffff;
     --storeBodyColor: #000000;
@@ -265,4 +262,6 @@
     --blogBtnSecondaryHoverBorderColor: #000000;
     --blogBtnSecondaryDisabledBg: #ffffff;
     --blogBtnSecondaryDisabledColor: #282828;
+
+    --animation-bounce: 0.4s cubic-bezier(0.35, 1.5, 0.6, 1);
 }

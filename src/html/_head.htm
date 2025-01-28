@@ -1,20 +1,67 @@
  <head>
+
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		
+		if(localStorage.getItem('consentMode') === null){
+			gtag('consent', 'default', {
+				'ad_storage': 'denied',
+				'analytics_storage': 'denied',
+				'personalization_storage': 'denied',
+				'functionality_storage': 'denied',
+				'security_storage': 'denied',
+			});
+		} else {
+			gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+		}
+	
+		if(localStorage.getItem('userId') != null) {
+			window.dataLayer.push({'user_id': localStorage.getItem('userId')});
+		}
+	</script>
+
 	<title>@@title</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	 <style>body{opacity: 0;}</style>
+	<meta name="title" content="СадСервис • Услуги садовника">
+	<meta name="description" content="Услуги садовника в Минске и пригороде!">
+
+	<style>body{opacity: 0;}</style> 
+
+	<meta property="og:title" content="СадСервис • Услуги садовника" />
+	<meta property="og:description" content="Услуги садовника в Минске и пригороде!" />
+	<meta property="og:image" content="https://sadovy-servis.by/sad.PNG" />
+	<meta property="og:url" content="https://sadovy-servis.by" />
+	<meta property="og:locale" content="ru">
+	<meta property="og:site_name" content="СадСервис • Услуги садовника в Минске и пригороде!">
+	<meta property="og:type" content="website">  
+
 	<link rel="stylesheet" href="css/style.min.css">
-	<link rel="shortcut icon" href="favicon.ico">
-	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://sadovy-servis.by">
+	<meta property="og:title" content="СадСервис • Услуги садовника">
+	<meta property="og:description" content="Услуги садовника в Минске и пригороде!">
+	<meta property="og:image" content="https://sadovy-servis.by/sad.PNG">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://sadovy-servis.by">
+	<meta property="twitter:title" content="СадСервис • Услуги садовника">
+	<meta property="twitter:description" content="Услуги садовника в Минске и пригороде!">
+	<meta property="twitter:image" content="https://sadovy-servis.by/sad.PNG">
+
+	<!-- Favicon  -->
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-	<link rel="manifest" href="img/favicon/site.webmanifest">
-	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
+	<link rel="icon" type="image/png" href="img/favicon/favicon-48x48.png" sizes="48x48" />
+	<link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" />
+
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
 </head>

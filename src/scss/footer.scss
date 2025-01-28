@@ -1,13 +1,14 @@
 //====================================================================================================
 .footer {
     padding-top: toRem(40);
-    padding-bottom: toRem(40);
     // .footer__container
 
     &__container {
         max-width: toRem(1780);
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        @include adaptiveValue("padding-bottom", 40, 20);
         @media (max-width:$tablet){
             grid-template-columns: repeat(2, 1fr);
             row-gap: toRem(40);
@@ -41,28 +42,48 @@
         }
     }
     &__foot {
-        text-align: center;
-        .link {
-            font-family: var(--caption3FontFamily);
-            font-size: var(--caption3FontSize);
-            font-weight: var(--caption3FontWeight);
-            font-style: var(--caption3FontStyle);
-            line-height: var(--caption3LineHeight);
+       padding-block: 1em; 
+    }
+    &__container--foot { 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: toRem(10);
+        line-height: 1.2;
+        font-size: toRem(14);
+        @media (max-width: em(640)){
+            flex-direction: column;
+            gap: toRem(5);
+        }
+        a {
+            width: fit-content;
+            transition: all .3s ease 0s;
+            @media (any-hover: hover){
+                &:hover{
+                    color: var(--headerHoverColor);
+                }
+            }
         }
     }
 
 }
 .logo-footer {
+    width: 15em;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     flex-direction: column;
+    gap: toRem(10);
 
     // .logo-footer__link
 
     &__link {
         
         //position: absolute;
+    }
+    &__descr {
+        font-size: toRem(13);
+        font-weight: 600;
+        line-height: 130%;
     }
 }
 
@@ -85,6 +106,10 @@
     &__list {
         display: grid;
         gap: toRem(10);
+        a {
+            font-weight: 500;
+            font-variant-numeric: lining-nums;
+        }
         
     }
 
@@ -93,11 +118,16 @@
     &__item {
         display: grid;
         transition: .3s ease-in-out 0s;
-            @media (any-hover: hover){
-                &:hover{
-                    color: var(--headerHoverColor);
-                }
+        width: fit-content;
+        @media (any-hover: hover){
+            &:hover{
+                color: var(--headerHoverColor);
             }
+        }
+        .social-footer__link {
+            font-size: 1em !important;
+            font-weight: 500;
+        }
     }
 
     // .contact-footer__link
@@ -146,10 +176,11 @@
         align-items: center;
         gap: toRem(12);
         font-family: var(--bodyText2FontFamily)!important;
-        font-size: var(--bodyText2FontSize)!important;
-        font-weight: var(--bodyText2FontWeight);
+        font-size: toRem(14)!important;
+        font-weight: 500;
         font-style: var(--bodyText2FontStyle);
         line-height: var(--bodyText2LineHeight);
+        width: fit-content;
         &::before {
             font-family: 'icomoon' !important;
             font-size: toRem(26); 

@@ -5,8 +5,14 @@ import { flsModules } from "../modules.js";
 import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../functions.js";
 // Модуль прокручування до блоку
 import { gotoBlock } from "../scroll/gotoblock.js";
+import barba from '@barba/core';
 //================================================================================================================================================================================================================================================================================================================================
-
+barba.hooks.after((data) => {
+    // Проверяем, что переход завершен успешно
+    if (data && data.current && data.current.container) {
+        formSubmit();
+    }
+});
 /*
 Документація: https://template.fls.guru/template-docs/rabota-s-formami.html
 */
@@ -31,7 +37,7 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 				targetElement.classList.remove('_form-focus');
 				targetElement.parentElement.classList.remove('_form-focus');
 			}
-			// Миттєва валідація
+			// Мгновенная валидация мгновенная валидация
 			targetElement.hasAttribute('data-validate') ? formValidate.validateInput(targetElement) : null;
 		}
 	});

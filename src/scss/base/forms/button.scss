@@ -3,27 +3,21 @@
 
 .button {
     display: inline-flex;
-	//white-space: nowrap;
     text-align: center;
-    text-decoration: none;
     padding: 12px 27px;
     font-family: var(--btnFontFamily);
-    font-size: var(--btnFontSize);
+    @include adaptiveValue("font-size", 16, 14, );
     font-weight: var(--btnFontWeight);
     font-style: var(--btnFontStyle);
-    color: var(--btnColor);
-    background: var(--btnBg);
     border-radius: var(--btnBorderRadius);
     border: var(--btnBorderWidth) var(--btnBorderStyle) var(--btnBorderColor);
     text-transform: var(--btnTextTransform);
-    text-decoration: var(--btnTextDecoration);
     background: var(--btnPrimaryBg);
     color: var(--btnPrimaryColor);
     border-color: var(--btnPrimaryBorderColor);
-	line-height: 110%;
+	line-height: 120%;
 	transition: all .3s ease 0s;
 	cursor: pointer !important;
-	align-content: center;
     align-items: center;
     justify-content: center;
     @media (any-hover: hover){

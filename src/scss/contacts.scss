@@ -13,7 +13,7 @@
         line-height: var(--headlineH1LineHeight);
     }
     .wrapper-contacts__descr {
-        color: var(--bodyText2Color);
+       
         @include adaptiveValue("font-size", 16, 14);
         font-size: var(--bodyText2FontSize);
         font-weight: var(--bodyText2FontWeight);
@@ -51,6 +51,7 @@
         grid-template-columns: repeat(2, 1fr);
         gap: toRem(26);
         max-width: toRem(380);
+        align-items: end;
     }
 
     // .working__label
@@ -58,10 +59,10 @@
     &__label {
         color: var(--subTitleH3Color);
         font-family: var(--subTitleH3FontFamily);
-        font-size: var(--subTitleH3FontSize);
         font-weight: var(--subTitleH3FontWeight);
         font-style: var(--subTitleH3FontStyle);
         line-height: var(--subTitleH3LineHeight);
+        @include adaptiveValue("font-size", 24, 16);
     }
 
     // .working__value
@@ -74,6 +75,8 @@
         font-weight: var(--bodyText3FontWeight);
         font-style: var(--bodyText3FontStyle);
         line-height: var(--bodyText3LineHeight);
+        font-variant-numeric: lining-nums;
+        justify-items: end;
     }
 }
 //========================================================================================================================================================

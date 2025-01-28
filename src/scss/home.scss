@@ -1,38 +1,28 @@
 //====================================================================================================
-
 .main-block {
-    background: url('@img/home/bg1.jpg') center / cover no-repeat;
+    background: url('@img/home/bg.png') center / cover no-repeat;
     min-height: 370px;
-    @include adaptiveValue("height", 650, 460);
+  //  @include adaptiveValue("height", 650, 600);
+    height: 100%;
     position: relative;
-    &::before{
-        content: "";
-        height: 100%;
-        width: 100%;
-        background: var(--overlayBg);
-        //backdrop-filter: blur(var(--imageBackdropFilter));
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        
-    }
-    // .main-block__container-header
-
     &__container-main {
         max-width: toRem(1140);
     }
     &__wrapper {
-        @include adaptiveValue("padding-top", 180, 120);
-        padding-bottom: 1.875rem;
+        @include adaptiveValue("padding-top", 220, 120);
+        @include adaptiveValue("padding-bottom", 140, 60);
+    }
+    &__body {
         display: flex;
         flex-direction: column;
-        text-align: -webkit-left;
-        text-align: left;
+        text-align: -webkit-left; 
         align-items: flex-start;
-        gap: toRem(30);
-        z-index: 1;
-        position: relative;
+        width: fit-content;
+        
+        @media (max-width:$mobile){ 
+            text-align: center;
+            align-items: center; 
+        }
         @media (max-width:$mobileSmall){
             align-items: center; 
         }
@@ -41,23 +31,38 @@
     // .main-block__title
 
     &__title {
-        max-width: toRem(505);
-        @media (max-width:$mobileSmall){
-            align-items: center; 
-            text-align: center;
+        max-width: 70%;
+        width: fit-content;
+        color: #ececec;
+        background-color: #00000049;
+        padding: .3em;
+        backdrop-filter: blur(var(--imageBackdropFilter));
+        margin-bottom: 0.5em;
+        @include adaptiveValue("margin-bottom", 30, 5);
+        @include adaptiveValue("padding-left", 32, 10);
+        @media (max-width:$mobile){
+            max-width: 100%; 
         }
+       
     }
 
     // .main-block__subtitle
 
     &__subtitle {
-        color: var(--bodyText2Color);
-        font-size: toRem(18);
-        @include adaptiveValue("font-size", 18, 14, 1, 800, 320);
+        font-size: toRem(22);
+        font-weight: 600;
         word-wrap: break-word;
         line-height: 130%;
-        max-width: toRem(456);
+        max-width: 60%;
+        color: #ececec;
+        background-color: #00000059;
+        padding: .5em;
+        @include adaptiveValue("padding-left", 32, 10);
+        @include adaptiveValue("margin-bottom", 30, 35);
+        backdrop-filter: blur(var(--imageBackdropFilter));
+        @include adaptiveValue("font-size", 22, 16, 1, 800, 320);
         @media (max-width:$mobileSmall){
+            max-width: 85%;
             display: flex;
             align-items: center; 
             text-align: center;
@@ -70,30 +75,47 @@
 
 .programm {
     background: var(--widgetTintBackgroundColor);
-    @include adaptiveValue("padding-top", 40, 30);
+    @include adaptiveValue("padding-top", 80, 40);
     @include adaptiveValue("padding-bottom", 70, 30);
     // .programm__container
 
     &__container {
         max-width: toRem(1780);
+        .body-gift__btn {
+            display: flex;
+            margin-inline: auto;
+            margin-top: 2em;
+        }
+        @media (max-width:$mobileSmall){
+             padding: 0; 
+        }
     }
 
     // .programm__title
 
     &__title {
-        margin-bottom: toRem(60);
+        text-align: center;
+        padding-bottom: 1.4em;
+        position: relative;
+        &::before{
+            content:'';
+            position: absolute;
+            bottom: .5em;
+            width: 4em;
+            height: 0.1em;
+            background-color: var(--bodyTextColor);
+            right: 50%;
+            transform: translateX(50%);
+        }
     }
   
 }
 
 .body-programm {
     display: grid;
-    border-left: 0.0625rem solid rgb(5, 6, 7);
-    border-top: 0.0625rem solid rgb(5, 6, 7);
     border-right: none;
     @media (min-width: $tablet) {
         grid-template-columns: repeat(3, 1fr);
-        border-top: 0.0625rem solid rgb(5, 6, 7);
         border-left: none;
     }
 
@@ -105,32 +127,34 @@
         flex-direction: column;
         justify-content: space-between;
         gap: toRem(30);
-        @include adaptiveValue("padding", 50, 20);
-        //padding: toRem(50);
-        @media (min-width:$tablet){
-            &:nth-child(1),
-            &:nth-child(2) {
-                border-right: 0.0625rem solid rgb(5, 6, 7);
-            } 
-
-        }
-        &:nth-child(1),
-        &:nth-child(2) {
-                border-bottom: 0.0625rem solid rgb(5, 6, 7);
-                @media (min-width:$tablet){
-                    border-bottom: none; 
-                }
-            }
-         
+        @include adaptiveValue("padding-block", 50, 20);
+        @include adaptiveValue("padding-inline", 30, 10);
+        
     }
 
     // .body-programm__title
 
     &__title {
-        @media (min-width:$tablet){
-            min-height: toRem(115);   
+        margin-bottom: 2em;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 1em;
+        @include adaptiveValue("font-size", 20, 18);
+        &::before{
+            content:'';
+            position: absolute;
+            bottom: -1em;
+            left: 0;
+            width: 4em;
+            height: 0.2em;
+            background-color: var(--bodyTextColor);
         }
-        
+        span {
+            font-size: toRem(14);
+            white-space: nowrap;
+        }
     }
 
     // .body-programm__descr
@@ -142,18 +166,71 @@
         font-weight: var(--bodyText1FontWeight);
         font-style: var(--bodyText1FontStyle);
         line-height: var(--bodyText1LineHeight);
-        display: grid;
+        @include adaptiveValue("line-height", 28, 23);
+        text-wrap: balance;
     }
 
     // .body-programm__image
 
     &__image {
-
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        &::before{
+            content:'';
+            display: block;
+            padding-bottom: 50%;
+        }
         img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            object-fit: cover;
+            height: 100%;
             width: 100%;
+            transition: all 0.3s ease;
+            @media (any-hover: hover){
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        @media (any-hover: hover){
+            &:hover{
+                .body-programm__icon {
+                    opacity: 1;
+                    transform: translate(-50%, -50%) scale(1) rotate(0.01deg);
+                }
+            }
         }
     }
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9) rotate(-45deg);
+        z-index: 3;
+        height: 5em;
+        width: 5em;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--accentColor);
+        transition: var(--animation-bounce);
+        opacity: 0;
+        pointer-events: none;
+        &::before{
+            font-size: 2em;
+            color: var(--bodyText2Color)
+        }
+
+    } 
 }
+ 
+
 //========================================================================================================================================================
 .about-kurs {
     @include adaptiveValue("padding-top", 40, 30);
@@ -254,7 +331,7 @@
 .gift {
     @include adaptiveValue("padding-top", 60, 30);
     @include adaptiveValue("padding-bottom", 60, 40);
-    background: var(--widgetTintBackgroundColor);
+    background-color: #236815e1;
 
 
     // .gift__container
@@ -271,6 +348,8 @@
 
     &__title {
         text-align: center;
+        color: #ffffff;
+        margin-bottom: 1.2em;
     }
 
     // .gift__body
@@ -284,7 +363,7 @@
     @include adaptiveValue("padding-bottom", 80, 40);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: toRem(30);
+    gap: 3em;
     grid-auto-rows: auto;
     @media (max-width:$tablet){
         display: flex;
@@ -297,7 +376,7 @@
     &__item {
         display: flex;
         flex-direction: column;
-        gap: toRem(15);
+        gap: 2.5em;
         align-items: center;
         max-width: 386px;
     }
@@ -306,29 +385,24 @@
 
     &__image {
         max-width: toRem(350);
+        width: 6em;
         img {
             width: 100%;
             height: 100%;
+            
         }
+        
     }
 
     // .body-gift__title
 
     &__title {
         text-align: center;
+        font-size: inherit;
+        width: 80%;
+        color: #e0e0e0
     }
 
-    // .body-gift__descr
-
-    &__descr {
-        color: var(--bodyText1Color);
-        font-family: var(--bodyText1FontFamily);
-        @include adaptiveValue("font-size", 18, 14);
-        font-weight: var(--bodyText1FontWeight);
-        font-style: var(--bodyText1FontStyle);
-        line-height: 128%;
-        text-align: center;
-    }
 }
 //========================================================================================================================================================
 .booking {
@@ -369,7 +443,7 @@
             padding: toRem(20) toRem(20) toRem(30);
             @include adaptiveValue("padding-right", 30, 5);
             @include adaptiveValue("padding-left", 30, 5);
-            background: #e0e0e0;
+            background-color: #e0e0e0;
             align-items: center;
         }
 
@@ -463,8 +537,8 @@
 //========================================================================================================================================================
 
 .contacts {
-    @include adaptiveValue("padding-top", 60, 30);
-    @include adaptiveValue("padding-bottom", 60, 30);
+    @include adaptiveValue("padding-top", 60, 40);
+    @include adaptiveValue("padding-bottom", 60, 40);
     background: var(--widgetTintBackgroundColor);
 
     // .contacts__container
@@ -486,6 +560,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        @media (max-width:$tablet){
+            display: none;
         }
     }
 
@@ -527,16 +604,15 @@
     // .wrapper-contacts__descr
 
     &__descr {
-        color: var(--bodyText2Color);
         font-family: var(--bodyText2FontFamily);
         @include adaptiveValue("font-size", 16, 14);
         font-weight: var(--bodyText2FontWeight);
         margin-bottom: 1rem;
     }
     hr {
-        background: var(--headlineH1LineBg);
-        width: 6.8125rem;
-        height: 0.3125rem;
+        background: var(--bodyTextColor);
+        width: 5em;
+        height: .2em;
     }
 
     // .wrapper-contacts__form

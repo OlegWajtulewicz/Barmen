@@ -1,6 +1,7 @@
 // Підключення функціоналу "Чортоги Фрілансера"
 import { isMobile, uniqArray, FLS } from "../files/functions.js";
 import { flsModules } from "../files/modules.js";
+import barba from '@barba/core';
 
 // Спостерігач об'єктів [всевидюче око]
 // data-watch - можна писати значення для застосування кастомного коду
@@ -9,6 +10,15 @@ import { flsModules } from "../files/modules.js";
 // data-watch-threshold - відсоток показу об'єкта для спрацьовування
 // data-watch-once - спостерігати лише один раз
 // _watcher-view - клас який додається за появи об'єкта
+
+barba.hooks.after((data) => {
+    // Проверяем, что переход завершен успешно
+    if (flsModules.watcher) {
+		flsModules.watcher.scrollWatcherUpdate();
+	  } else {
+		flsModules.watcher = new ScrollWatcher({});
+	  }
+});
 
 class ScrollWatcher {
 	constructor(props) {
@@ -124,6 +134,7 @@ class ScrollWatcher {
 			// Забираємо клас
 			targetElement.classList.contains('_watcher-view') ? targetElement.classList.remove('_watcher-view') : null;
 			this.scrollWatcherLogging(`Я не бачу ${targetElement.classList}, прибрав клас _watcher-view`);
+			
 		}
 	}
 	// Функція відключення стеження за об'єктом

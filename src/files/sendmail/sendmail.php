@@ -20,14 +20,16 @@
 	$mail->Port       = 465; 
 
 	//Від кого лист
-	$mail->setFrom('vajoleg@gmail.com', 'CREATEX'); // Вказати потрібний E-mail
+	$mail->setFrom('vajoleg@gmail.com', 'СадСервис'); // Вказати потрібний E-mail
 	//Кому відправити
-	$mail->addAddress('vajoleg@gmail.com'); // Вказати потрібний E-mail
+	$mail->addAddress('sadovyservis@gmail.com'); // Вказати потрібний E-mail
+	$mail->addAddress('vaitulevichaleh@gmail.com');
+	$mail->addAddress('sadovyservis@gmail.com');
 	//Тема листа
-	$mail->Subject = 'CREATEX';
+	$mail->Subject = 'СадСервис';
 
 		//Тело письма
-		$body = '<h1>Встречай CREATEX!</h1>';
+		$body = '<h1>СадСервис заявка с сайта!</h1>';
 	
 		if(trim(!empty($_POST['name']))){
 			$body .='<p>Name: <strong>'.$_POST['name'].'</strong></p>';

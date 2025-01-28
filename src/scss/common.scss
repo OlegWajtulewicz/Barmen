@@ -3,11 +3,11 @@
     position: relative;
     color: var(--headlineH1Color);
     font-family: var(--headlineH1FontFamily);
-    @include adaptiveValue("font-size", 56, 32);
+    @include adaptiveValue("font-size", 56, 22);
     font-weight: 900;
     font-style: var(--headlineH1FontStyle);
     line-height: var(--headlineH1LineHeight);
-    
+    margin-bottom: toRem(15);
 }
 .title-intro {
     color: var(--subTitleH3Color);
@@ -30,10 +30,7 @@
     
 }
 //========================================================================================================================================================
-body {
-    //position: relative;
-    //overflow: hidden;
-}
+
 .box {
     position: fixed;
     top: 0;
@@ -48,4 +45,7 @@ body {
     @media (max-width:$mobile){
          display: none; 
     }
+}
+a {
+    font-variant-numeric: lining-nums;
 }

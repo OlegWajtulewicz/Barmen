@@ -279,7 +279,7 @@ body.mouse .menu__arrow {
         line-height: var(--headlineH1LineHeight);
     }
     .wrapper-contacts__descr {
-        color: var(--bodyText2Color);
+       
         @include adaptiveValue("font-size", 16, 14);
         font-size: var(--bodyText2FontSize);
         font-weight: var(--bodyText2FontWeight);

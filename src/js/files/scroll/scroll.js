@@ -24,76 +24,90 @@ barba.hooks.after((data) => {
 //====================================================================================================================================================================================================================================================================================================
 // Плавна навігація по сторінці
 export function pageNavigation() {
-	// data-goto - вказати ID блоку
-	// data-goto-header - враховувати header
-	// data-goto-top - недокрутити на вказаний розмір
-	// data-goto-speed - швидкість (тільки якщо використовується додатковий плагін)
-	// Працюємо при натисканні на пункт
-	document.addEventListener("click", pageNavigationAction);
-	// Якщо підключено scrollWatcher, підсвічуємо поточний пункт меню
-	document.addEventListener("watcherCallback", pageNavigationAction);
-	// Основна функція
-	function pageNavigationAction(e) {
-		if (e.type === "click") {
-			const targetElement = e.target;
-			if (targetElement.closest('[data-goto]')) {
-				const gotoLink = targetElement.closest('[data-goto]');
-				const gotoLinkSelector = gotoLink.dataset.goto ? gotoLink.dataset.goto : '';
-				const noHeader = gotoLink.hasAttribute('data-goto-header') ? true : false;
-				const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
-				const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
-				if (flsModules.fullpage) {
-					const fullpageSection = document.querySelector(`${gotoLinkSelector}`).closest('[data-fp-section]');
-					const fullpageSectionId = fullpageSection ? +fullpageSection.dataset.fpId : null;
-					if (fullpageSectionId !== null) {
-						flsModules.fullpage.switchingSection(fullpageSectionId);
-						document.documentElement.classList.contains("menu-open") ? menuClose() : null;
-					}
-				} else {
-					gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
-				}
-				e.preventDefault();
-			}
-		} else if (e.type === "watcherCallback" && e.detail) {
-			const entry = e.detail.entry;
-			const targetElement = entry.target;
-			// Обробка пунктів навігації, якщо вказано значення navigator, підсвічуємо поточний пункт меню
-			if (targetElement.dataset.watch === 'navigator') {
-				const navigatorActiveItem = document.querySelector(`[data-goto]._navigator-active`);
-				let navigatorCurrentItem;
-				if (targetElement.id && document.querySelector(`[data-goto="#${targetElement.id}"]`)) {
-					navigatorCurrentItem = document.querySelector(`[data-goto="#${targetElement.id}"]`);
-				} else if (targetElement.classList.length) {
-					for (let index = 0; index < targetElement.classList.length; index++) {
-						const element = targetElement.classList[index];
-						if (document.querySelector(`[data-goto=".${element}"]`)) {
-							navigatorCurrentItem = document.querySelector(`[data-goto=".${element}"]`);
-							break;
-						}
-					}
-				}
-				if (entry.isIntersecting) {
-					// Бачимо об'єкт
-					// navigatorActiveItem ? navigatorActiveItem.classList.remove('_navigator-active') : null;
-					navigatorCurrentItem ? navigatorCurrentItem.classList.add('_navigator-active') : null;
-				} else {
-					// Не бачимо об'єкт
-					navigatorCurrentItem ? navigatorCurrentItem.classList.remove('_navigator-active') : null;
-				}
-			}
-		}
-	}
-	// Прокручування по хешу
-	if (getHash()) {
-		let goToHash;
-		if (document.querySelector(`#${getHash()}`)) {
-			goToHash = `#${getHash()}`;
-		} else if (document.querySelector(`.${getHash()}`)) {
-			goToHash = `.${getHash()}`;
-		}
-		goToHash ? gotoBlock(goToHash, true, 500, 20) : null;
-	}
+    // data-goto - вказати ID блоку
+    // data-goto-header - враховувати header
+    // data-goto-top - недокрутити на вказаний розмір
+    // data-goto-speed - швидкість (тільки якщо використовується додатковий плагін)
+    // Працюємо при натисканні на пункт
+    document.addEventListener("click", pageNavigationAction);
+    // Якщо підключено scrollWatcher, підсвічуємо поточний пункт меню
+    document.addEventListener("watcherCallback", pageNavigationAction);
+    // Основна функція
+    function pageNavigationAction(e) {
+        if (e.type === "click") {
+            const targetElement = e.target;
+            if (targetElement.closest('[data-goto]')) {
+                const gotoLink = targetElement.closest('[data-goto]');
+                const gotoLinkSelector = gotoLink.dataset.goto ? gotoLink.dataset.goto : '';
+                const noHeader = gotoLink.hasAttribute('data-goto-header') ? true : false;
+                const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
+                const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
+                if (flsModules.fullpage) {
+                    const fullpageSection = document.querySelector(`${gotoLinkSelector}`).closest('[data-fp-section]');
+                    const fullpageSectionId = fullpageSection ? +fullpageSection.dataset.fpId : null;
+                    if (fullpageSectionId !== null) {
+                        flsModules.fullpage.switchingSection(fullpageSectionId);
+                        document.documentElement.classList.contains("menu-open") ? menuClose() : null;
+                    }
+                } else {
+                    gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+                }
+                e.preventDefault();
+            }
+        } else if (e.type === "watcherCallback" && e.detail) {
+            const entry = e.detail.entry;
+            const targetElement = entry.target;
+            // Обробка пунктів навігації, якщо вказано значення navigator, підсвічуємо поточний пункт меню
+            if (targetElement.dataset.watch === 'navigator') {
+                const navigatorActiveItem = document.querySelector(`[data-goto]._navigator-active`);
+                let navigatorCurrentItem;
+                if (targetElement.id && document.querySelector(`[data-goto="#${targetElement.id}"]`)) {
+                    navigatorCurrentItem = document.querySelector(`[data-goto="#${targetElement.id}"]`);
+                } else if (targetElement.classList.length) {
+                    for (let index = 0; index < targetElement.classList.length; index++) {
+                        const element = targetElement.classList[index];
+                        if (document.querySelector(`[data-goto=".${element}"]`)) {
+                            navigatorCurrentItem = document.querySelector(`[data-goto=".${element}"]`);
+                            break;
+                        }
+                    }
+                }
+                if (entry.isIntersecting) {
+                    // Бачимо об'єкт
+                    // navigatorActiveItem ? navigatorActiveItem.classList.remove('_navigator-active') : null;
+                    navigatorCurrentItem ? navigatorCurrentItem.classList.add('_navigator-active') : null;
+                } else {
+                    // Не бачимо об'єкт
+                    navigatorCurrentItem ? navigatorCurrentItem.classList.remove('_navigator-active') : null;
+                }
+            }
+        }
+    }
+    // Прокручування по хешу
+	if (getScrollHash()) {
+        let goToHash;
+        if (document.querySelector(`[data-content="${getScrollHash()}"]`)) {
+            goToHash = getScrollHash();
+        }
+        goToHash ? showContent(goToHash) : null;
+    }
 }
+
+function getScrollHash() {
+    return window.location.hash ? window.location.hash.replace('#', '') : null;
+}
+
+function showContent(target) {
+    const blocks = document.querySelectorAll('[data-content]');
+    blocks.forEach(block => {
+        if (block.getAttribute('data-content') === target) {
+            block.style.display = 'block';
+        } else {
+            block.style.display = 'none';
+        }
+    });
+}
+
 // Робота з шапкою при скролі
 export function headerScroll() {
 	addWindowScrollEvent = true;

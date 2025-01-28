@@ -453,124 +453,87 @@ export function tabs() {
 		}
 	}
 }
+//========================================================================================================================================================
 // Модуль роботи з меню (бургер) =======================================================================================================================================================================================================================
-// export function menuInit() {
-//   const iconMenu = document.querySelector(".icon-menu");
+function closeAllMenus() {
+    const currentSubMenu = document.querySelector('.sub-menu-top-header__list.open');
+    const currentSubSubMenu = document.querySelector('.sub-sub-menu-top-header__list.open');
+    if (currentSubMenu) {
+        currentSubMenu.classList.remove('open');
+    }
+    if (currentSubSubMenu) {
+        currentSubSubMenu.classList.remove('open');
+    }
+}
 
-//   if (!iconMenu) return;
-
-//   document.addEventListener("click", function (e) {
-//     const bodyLockStatus = /* your body lock status logic */;
-//     const isIconMenuClicked = e.target.closest('.icon-menu');
-
-//     if (bodyLockStatus && isIconMenuClicked) {
-//       bodyLockToggle();
-//       document.documentElement.classList.toggle("menu-open");
-
-//       const hasOpenSubMenu = document.querySelector('.sub-menu-top-header__list.open') || document.querySelector('.sub-sub-menu-top-header__list.open');
-      
-//       if (!hasOpenSubMenu) {
-//         // document.documentElement.classList.remove('menu-open');
-//       }
-
-//     } else if (e.target.closest('.menu__body a')) {
-//       // menuClose();	
-//     }
-
-//     const backButton = e.target.closest('.sub-menu-top-header__back');
-
-//     if (backButton) {
-//       const isMobileTouchDevice = document.body.classList.contains('touch');
-//       const currentSubMenu = document.querySelector('.sub-menu-top-header__list.open');
-//       const currentSubSubMenu = document.querySelector('.sub-sub-menu-top-header__list.open');
-
-//       if (isMobileTouchDevice) {
-//         if (currentSubMenu) {
-//           currentSubMenu.classList.remove('open', 'no-hover-effects');
-//         }
-//       } else {
-//         if (currentSubSubMenu) {
-//           currentSubSubMenu.classList.remove('open');
-//         } else if (currentSubMenu) {
-//           currentSubMenu.classList.remove('open', 'no-hover-effects');
-//         } else {
-//           document.documentElement.classList.remove('menu-open');
-//         }
-//       }
-//     }
-
-//     const closeMenu = document.querySelector('.icon-menu');
-//     const currentSubMenu = document.querySelector('.sub-menu-top-header__list.open');
-
-//     if (currentSubMenu) {
-//       closeMenu.addEventListener('click', function () {
-//         currentSubMenu.classList.remove('open');
-//       });
-//     }
-//   });
-// }
-//========================================================================================================================================================
 export function menuInit() {
-	const iconMenu = document.querySelector(".icon-menu");
-	if (!iconMenu) return;
-	document.addEventListener("click", function (e) {
-	  //const bodyLockStatus = /* your body lock status logic */;
-	  const isIconMenuClicked = e.target.closest('.icon-menu');
-	  if (bodyLockStatus && isIconMenuClicked) {
-		bodyLockToggle();
-		document.documentElement.classList.toggle("menu-open");
-		const hasOpenSubMenu = document.querySelector('.sub-menu-top-header__list.open') || document.querySelector('.sub-sub-menu-top-header__list.open');
-		if (!hasOpenSubMenu) {
-		   //document.documentElement.classList.remove('menu-open');
-		}
-	  } else if (e.target.closest('.menu__body a')) {
-		 //menuClose();	
-	  }
-	  const backButton = e.target.closest('.sub-menu-top-header__back');
-	  if (backButton) {
-		const isMobileTouchDevice = document.body.classList.contains('touch');
-		const currentSubMenu = document.querySelector('.sub-menu-top-header__list.open');
-		const currentSubSubMenu = document.querySelector('.sub-sub-menu-top-header__list.open');
-		if (isMobileTouchDevice) {
-		  if (currentSubMenu) {
-			currentSubMenu.classList.remove('open', 'no-hover-effects');
-		  }
-		} else {
-		  if (currentSubSubMenu) {
-			currentSubSubMenu.classList.remove('open');
-		  } else if (currentSubMenu) {
-			currentSubMenu.classList.remove('open', 'no-hover-effects');
-		  } else {
-			document.documentElement.classList.remove('menu-open');
-		  }
-		}
-	  }
-	  const closeMenu = document.querySelector('.icon-menu');
-	  const currentSubMenu = document.querySelector('.sub-menu-top-header__list.open');
-	  if (currentSubMenu) {
-		closeMenu.addEventListener('click', function () {
-		  currentSubMenu.classList.remove('open');
-		});
-	  }
-	});
-  }
-  
+    const iconMenu = document.querySelector(".icon-menu");
+    if (!iconMenu) return;
 
-//========================================================================================================================================================
+    document.addEventListener("click", function (e) {
+        const isIconMenuClicked = e.target.closest('.icon-menu');
 
+        if (bodyLockStatus && isIconMenuClicked) {
+            // Закрываем все подменю
+            closeAllMenus();
 
+            // Переключаем меню
+            bodyLockToggle();
+            document.documentElement.classList.toggle("menu-open");
 
-//========================================================================================================================================================
+            // Если есть открытые подменю, закрываем главное меню
+            const hasOpenSubMenu = document.querySelector('.sub-menu-top-header__list.open') || document.querySelector('.sub-sub-menu-top-header__list.open');
+            if (hasOpenSubMenu) {
+                document.documentElement.classList.remove('menu-open');
+            }
+        } else if (e.target.closest('.menu__body a')) {
+            // Закрытие меню при клике на ссылку
+            menuClose();
+        }
 
+        // Закрытие подменю при нажатии на кнопку "Назад"
+        const backButton = e.target.closest('.sub-menu-top-header__back');
+        if (backButton) {
+            const isMobileTouchDevice = document.body.classList.contains('touch');
+            const currentSubMenu = document.querySelector('.sub-menu-top-header__list.open');
+            const currentSubSubMenu = document.querySelector('.sub-sub-menu-top-header__list.open');
+            if (isMobileTouchDevice) {
+                if (currentSubMenu) {
+                    currentSubMenu.classList.remove('open', 'no-hover-effects');
+                }
+            } else {
+                if (currentSubSubMenu) {
+                    currentSubSubMenu.classList.remove('open');
+                } else if (currentSubMenu) {
+                    currentSubMenu.classList.remove('open', 'no-hover-effects');
+                } else {
+                    document.documentElement.classList.remove('menu-open');
+                }
+            }
+        }
+
+        // Закрытие всех подменю при нажатии на пункт подменю или под-подменю
+        const subSubMenuLink = e.target.closest('.sub-sub-menu-top-header__link');
+        const subMenuLink = e.target.closest('.sub-menu-top-header__link');
+        if (subSubMenuLink || subMenuLink) {
+            closeAllMenus();
+        }
+    });
+}
 
 export function menuOpen() {
-	bodyLock();
-	document.documentElement.classList.add("menu-open");
+    bodyLock();
+    document.documentElement.classList.add("menu-open");
 }
+
 export function menuClose() {
-	bodyUnlock();
-	document.documentElement.classList.remove("menu-open");
+    bodyUnlock();
+    document.documentElement.classList.remove("menu-open");
+
+    // Убираем класс 'open' со всех подменю при закрытии главного меню
+    closeAllMenus();
 }
+
 // Модуль "показати ще" =======================================================================================================================================================================================================================
 export function showMore() {
 	window.addEventListener("load", function (e) {

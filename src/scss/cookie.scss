@@ -1,0 +1,65 @@
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    display: none; /* По умолчанию скрыт, будет показан только если пользователь еще не принял условия использования cookies */
+    &__buttons{
+        display: flex; 
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: toRem(10);
+    }
+    }
+
+.cookie-consent-banner h3 {
+    margin-bottom: .6em;
+    font-weight: 600;
+    line-height: 1.3;
+    }
+
+.cookie-consent-banner p {
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+    @include adaptiveValue("font-size", 18, 14);
+    }
+
+.cookie-consent-button {
+    @include adaptiveValue("font-size", 18, 14);
+    padding: 10px 20px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-outline {
+    background-color: #fff;
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.btn-grayscale {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.cookie-consent-options {
+    display: flex;
+    justify-content: center;
+    padding-block: toRem(15);
+    flex-wrap: wrap;
+    align-content: center;
+    gap: toRem(10);
+}
+
+.cookie-consent-options label {
+    display: flex;
+    gap: toRem(5);
+    @include adaptiveValue("font-size", 18, 14);
+}

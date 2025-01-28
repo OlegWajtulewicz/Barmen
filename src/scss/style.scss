@@ -25,7 +25,8 @@ $fontSize: toRem(18); // де 14(px) - розмір шрифту за замов
 
 // Основні кольори
 $mainColor: #000; // Колір шрифту за замовчуванням
-
+$textColor: #282828;
+$accentColor: var(--bodyTextColor);
 // Палітра кольорів
 @import "base/colors-palette";
 
@@ -63,6 +64,7 @@ $responsiveType: 1;
 
 // Стилі тега BODY ============================================================================================================================================================================================================================================================================================================================================================================================
 body {
+	padding-right: 0 !important;
 	// Скролл заблоковано
 	.lock & {
 		overflow: hidden;
@@ -74,6 +76,14 @@ body {
 		transition: all .3s ease-in-out 0s;
     	opacity: 1;
 	}
+	::selection {
+		background: var(--btnPrimaryBg); /* Safari */
+		color: var(--headerHoverColor);
+		}
+	::-moz-selection {
+		background: var(--btnPrimaryBg); /* Firefox */
+		color: var(--headerHoverColor);
+		}
 	
 }
 summary::marker {
@@ -164,12 +174,14 @@ details > summary:first-of-type {
 // Підключення стилів окремих блоків
 @import "header";
 @import "footer";
+@import "policy";
+@import "cookie";
 
 // Підключення стилів окремих сторінок
 @import "home";
 @import "corporate-client";
 @import "contacts";
-@import "menu-down";
+//@import "menu-down";
 
 
 .page {

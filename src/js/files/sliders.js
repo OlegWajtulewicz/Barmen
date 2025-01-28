@@ -54,8 +54,8 @@ function initSliders() {
 			autoHeight: true,
 			speed: 10000,
 
-			//touchRatio: 0,
-			//simulateTouch: false,
+			touchRatio: 0,
+			simulateTouch: false,
 			loop: true,
 			//preloadImages: false,
 			lazy: true,
@@ -95,19 +95,23 @@ function initSliders() {
 			breakpoints: {
 				300: {
 					slidesPerView: 1,
-					spaceBetween: 0,
+					spaceBetween: 10,
 					autoHeight: true,
 				},
-				676: {
+				480: {
 					slidesPerView: 2,
-					spaceBetween: 30
+					spaceBetween: 10,
+				},
+				768: {
+					slidesPerView: 3,
+					spaceBetween: 20
 				},
 				1020: {
-					slidesPerView: 3,
+					slidesPerView: 4,
 					spaceBetween: 30,
 				},
 				1382: {
-					slidesPerView: 4,
+					slidesPerView: 5,
 					spaceBetween: 30,
 				},
 			},

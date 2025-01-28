@@ -31,19 +31,19 @@
 	// .header__container
 
 	&__container {
-		max-width: toRem(1290);
+		max-width: 112rem;
 		
 		color: var(--headerColor);
 		padding-top: 1.25rem;
 		height: 3.75rem;
 		transition: .3s ease-in-out 0s;
 		display: flex;
-		gap: toRem(15);
+		//gap: 3em;
 		align-items: center;
 		justify-content: space-between;
 		@media (max-width:$tablet){
 			padding-right: toRem(60);
-			gap: toRem(5);
+			//gap: toRem(5);
 		}
 	}
 
@@ -54,11 +54,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		svg {
-			max-width: 120px;
-			height: 1.875rem;
+		img {
+			max-width: 12rem;
+			height: 3rem;
 			@media (max-width:$mobileSmall){
-				max-width: 6.25rem; 
+				display: none; 
 			}
 		}
 		span {
@@ -66,6 +66,18 @@
 			transform: translateY(50);
 			font-size: toRem(26);
 			font-weight: 600;
+		}
+		&--min {
+			display: none;
+			img {
+				max-width: 5rem;
+				
+			}
+			@media (max-width:$mobileSmall){
+				display: block;  
+			}
+			
+			
 		}
 	}
 
@@ -108,6 +120,10 @@
 	align-items: center;
 }
 .menu-top-header {
+	padding-left: 4em;
+	@media (max-width:$tablet){
+		padding-left: .5em;
+	}
 	// .menu-top-header__list
 
 	&__list {
@@ -163,6 +179,9 @@
 		}
 		@media (max-width:$tablet){
 			padding: 0;
+		}
+		&._watcher-view {
+			color: var(--bodyTextColor);
 		}	 	
 	}
 	
@@ -211,7 +230,7 @@
 		@media (max-width: $tablet) {
 			position: fixed;
 			width: 100%;
-			max-width: toRem(300);
+			max-width: toRem(350);
 			min-height: 100%;
 			top: 0;
 			left: auto;
@@ -223,6 +242,9 @@
 			z-index: 1;
 			transform: scaleX(0);
 			opacity: 0;
+			@media (max-width:$mobileSmall){
+				padding: toRem(103) toRem(15) toRem(0) toRem(15); 
+			}
 		}
 		@media (max-width:$mobileSmall){
 			max-width: 100%; 
@@ -236,7 +258,7 @@
 
 	&__link {
 		padding: toRem(15) toRem(20);
-		
+		white-space: nowrap;
 		font-family: $fontFamily !important;
         display: flex;
         flex-direction: row-reverse;
@@ -263,7 +285,7 @@
 			width: 18px;
 			top: 0;
 			left: 0;
-			z-index: 2;
+			z-index: 1;
 			@media (max-width:$tablet){
 				padding: toRem(15) toRem(20);
 			}
@@ -286,7 +308,7 @@
 		
 		align-items: center;
 		position: absolute;
-		left: 28px;
+		//left: 28px;
 		transition: all 2s ease-in-out 1s;
 		top: 27px;
 		&::before{
@@ -316,7 +338,7 @@
 		@media (max-width:$tablet){
 			position: fixed;
 			width: 100%;
-			max-width: toRem(300);
+			max-width: toRem(350);
 			min-height: 100%;
 			top: 0;
 			left: auto;
@@ -327,6 +349,9 @@
 			background: rgb(255 255 255);
 			z-index: 2;
 			transform: scaleX(0);
+			@media (max-width:$mobileSmall){
+				padding: toRem(103) toRem(15) toRem(0) toRem(15); 
+			}
 		}
 		@media (max-width:$mobileSmall){
 			max-width: 100%; 
@@ -337,7 +362,7 @@
 
 	&__link {
 		padding: toRem(15) toRem(20);
-		
+		white-space: nowrap;
 		font-family: $fontFamily !important;
         display: flex;
         flex-direction: row-reverse;
@@ -361,6 +386,7 @@
 			padding: toRem(10) 0;
 			top: 150px;
 			left: 0;
+			white-space: normal;
 		}
 	}
 }
@@ -452,7 +478,8 @@
 .actions-header {
 	display: flex;
 	gap: toRem(30);
-	@include adaptiveValue("padding-left", 470, -120);
+	margin-left: auto;
+	//@include adaptiveValue("padding-left", 470, -120);
 	// .actions-header__contacts
 
 	&__contacts {
@@ -487,11 +514,8 @@
 	&__btn {
 		z-index: 3;
 		white-space: nowrap;
-		//@include adaptiveValue("padding-right", 22, 12, 0, 1080, 1050);
-		//@include adaptiveValue("padding-left", 22, 12, 0, 1080, 1050);
 		@media (max-width: em(384)){
-			padding: toRem(5) toRem(20); 
-			white-space: wrap;
+			padding: toRem(12) toRem(10); 
 		}
 	}
 	
@@ -552,7 +576,7 @@
 		transition: .3s ease-in-out 0s;
 		display: block!important;
 		z-index: 99;
-		box-shadow: 0 0.625rem 1.25rem 0 hsla(0,0%,53.7%,.2);
+		box-shadow: 0 0.625rem 3rem 0 hsla(0, 0%, 54%, 0.397);
 	}
 }
 //==============================================
@@ -578,6 +602,9 @@
 	// .phones-header__phone
 
 	&__phone {
+		font-variant-numeric: lining-nums;
+		font-weight: 600;
+		letter-spacing: .02em;
 	}
 
 	// .phones-header__descr
@@ -628,13 +655,16 @@
 			right: -100%;
 			bottom: 0;
 			z-index: 2;
-			max-width: 300px;
+			max-width: toRem(350);
 			width: 100%;
 			height: 100%;
 			background: var(--headerBg);
 			padding: 5.625rem 1.875rem;
 			transition: all .5s cubic-bezier(1,.5,.8,1);
 			border-left: 1px solid #00000014;
+			@media (max-width:$mobileSmall){
+				padding-inline: toRem(15); 
+			}
 			&::before {
 				content: "";
 				position: fixed;

@@ -1,0 +1,72 @@
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    if(localStorage.getItem('consentMode') === null){
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'personalization_storage': 'denied',
+            'functionality_storage': 'denied',
+            'security_storage': 'denied',
+        });
+    } else {
+        gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+    }
+
+    if(localStorage.getItem('userId') != null) {
+        window.dataLayer.push({'user_id': localStorage.getItem('userId')});
+    }
+</script>
+
+<style>
+    .cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 20px 0;
+  text-align: center;
+  z-index: 1000;
+  display: none; /* По умолчанию скрыт, будет показан только если пользователь еще не принял условия использования cookies */
+}
+
+.cookie-consent-banner h3 {
+  margin: 0 0 15px 0;
+}
+
+.cookie-consent-banner p {
+  margin: 0 0 15px 0;
+}
+
+.cookie-consent-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-outline {
+  background-color: #fff;
+  color: #28a745;
+  border: 1px solid #28a745;
+}
+
+.btn-grayscale {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.cookie-consent-options {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.cookie-consent-options label {
+  margin: 0 10px;
+}
+ </style>

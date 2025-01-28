@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 	@@include('html/_head.htm',{
-	"title":"Contacts"
+	"title":"Контакты • СадСервис",
 	})
 	<body data-barba="wrapper">
 		<div class="box"></div>
 		<div class="wrapper" data-barba="container" data-barba-namespace="Contacts">
 			@@include('html/_header-contacts.htm',{})
-			<main data-barba="container" data-barba-namespace="Contacts" class="page page_contacts contacts-page">
+			<main class="page page_contacts contacts-page" data-watch="contacts" data-watch-once>
 				
 				<section class="page__contacts-form contacts-form">
 					<div class="contacts__container">
 						
 						<div class="contacts__wrapper wrapper-contacts">
 							
-							<h3 class="wrapper-contacts__titl title-section">Call me back</h3>
-							<div class="wrapper-contacts__descr">If you need an assistance earlier scheduled, please leave your name and phone number so we contact you and figure out how to meet your needs.</div>
+							<h3 class="wrapper-contacts__titl title-section">Перезвоните мне</h3>
+							<div class="wrapper-contacts__descr">Если вам нужна помощь раньше назначенного времени, пожалуйста, оставьте свое имя и номер телефона, чтобы мы могли связаться с вами и решить, как удовлетворить ваши потребности.</div>
 							<hr>
 							<div class="wrapper-contacts__form">
 								<form data-ajax data-validate data-required data-popup-message="#thanks" method="POST" action="files/sendmail/sendmail.php" enctype="multipart/form-data" class="tab-body-form__form form">
 									<div class="form-form">
 
 										<div class="form__item first">
-											<label for="first-name" class="form__label">First Name*</label>
-											<input type="text" id="first-name" name="first-name"  placeholder="Your first name" class="form__input input " required> 
+											<label for="first-name" class="form__label">Имя*</label>
+											<input type="text" id="first-name" name="first-name"  placeholder="Ваше имя" class="form__input input " required> 
 										</div> 
 
 										<div class="form__item last">
-											<label for="last-name" class="form__label">Last Name*</label>
-											<input type="text" id="last-name" name="last-name"  placeholder="Your last name" class="form__input input " required> 
+											<label for="last-name" class="form__label">Фамилия*</label>
+											<input type="text" id="last-name" name="last-name"  placeholder="Ваша фамилия" class="form__input input " required> 
 										</div>
 
 										<div class="form__item email">
-											<label for="email" class="form__label">Email address</label>
-											<input required id="email" type="email" name="email" placeholder="Your working email" class="form__input input " >
+											<label for="email" class="form__label">Адрес электронной почты</label>
+											<input required id="email" type="email" name="email" placeholder="Ваш рабочий адрес электронной почты" class="form__input input " >
 										</div>
 
 										<div class="form__item phone">
-											<label for="phone" class="form__label">Phone*</label>
-											<input required type="tel" id="phone" name="phone" placeholder="Your phone number" class="form__input input">
+											<label for="phone" class="form__label">Телефон*</label>
+											<input required type="tel" id="phone" name="phone" placeholder="Ваш номер телефона" class="form__input input">
 										</div>
 									</div>
 									 <div class="form__item ">
-										<label for="message" class="form__label">Notes</label>
-										<textarea id="message" name="message" placeholder="Your message" class="form__input input"></textarea>
+										<label for="message" class="form__label">Примечания</label>
+										<textarea id="message" name="message" placeholder="Ваше сообщение" class="form__input input"></textarea>
 									</div>
-									<button class="wrapper-contacts__btn button">SUBMIT</button>
+									<button class="wrapper-contacts__btn button">ОТПРАВИТЬ</button>
 								</form>
 							</div>
 						</div>
 						<div class="contacts__working working">
-                            <h2 class="working__title title-section">Working hours</h2>
+                            <h2 class="working__title title-section">Рабочее время</h2>
 							<div class="working__body ">
                                 <div class="working__table">
-                                    <div class="working__label">Monday</div>
-                                    <div class="working__value">09 : 00 am - 07 : 30 pm</div>
-                                    <div class="working__label">Tuesday</div>
-                                    <div class="working__value">09 : 00 am - 07 : 30 pm</div>
-                                    <div class="working__label">Wednesday</div>
-                                    <div class="working__value">09 : 00 am - 07 : 30 pm</div>
-                                    <div class="working__label">Thursday</div>
-                                    <div class="working__value">09 : 00 am - 07 : 30 pm</div>
-                                    <div class="working__label">Friday</div>
-                                    <div class="working__value">09 : 00 am - 07 : 30 pm</div>
-                                    <div class="working__label">Saturday</div>
-                                    <div class="working__value">09 : 00 am - 07 : 30 pm</div>
-                                    <div class="working__label">Sunday</div>
-                                    <div class="working__value">09 : 00 am - 07 : 30 pm</div>
+                                    <div class="working__label">Понедельник</div>
+                                    <div class="working__value">08 : 00  - 19 : 00 </div>
+                                    <div class="working__label">Вторник</div>
+                                    <div class="working__value">08 : 00  - 19 : 00 </div>
+                                    <div class="working__label">Среда</div>
+                                    <div class="working__value">08 : 00  - 19 : 00 </div>
+                                    <div class="working__label">Четверг</div>
+                                    <div class="working__value">08 : 00  - 19 : 00 </div>
+                                    <div class="working__label">Пятница</div>
+                                    <div class="working__value">08 : 00  - 19 : 00 </div>
+                                    <div class="working__label">Суббота</div>
+                                    <div class="working__value">08 : 00  - 19 : 00 </div>
+                                    <div class="working__label">Воскресенье</div>
+                                    <div class="working__value">08 : 00  - 19 : 00 </div>
                                    
                                 </div>
                             </div>
@@ -76,13 +76,14 @@
 				</section>
                 <section class="page__contacts-map contacts-map">
                     <div id="map" class="contacts-map__map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d241532.0928831468!2d-5.684216766231851!3d37.36672842221207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2spl!4v1695478009660!5m2!1sru!2spl"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d358478.480067624!2d28.190639334539856!3d53.82462150181261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcfd35b1e6ad3%3A0xb61b853ddb570d9!2z0JzQuNC90YHQuiwg0JzQuNC90YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCR0LXQu9Cw0YDRg9GB0Yw!5e0!3m2!1sru!2spl!4v1736966588810!5m2!1sru!2spl" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </section>
 
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
+		@@include('html/_cookie-body.htm',{})
 		@@include('html/_popup.htm',{})
 		@@include('html/_js.htm',{})
 	

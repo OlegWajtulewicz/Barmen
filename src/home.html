@@ -1,54 +1,385 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 	@@include('html/_head.htm',{
-	"title":"HomePage"
+	"title":"Главная • SadServis"
 	})
 	<body data-barba="wrapper">
 		<div class="box"></div>
 		<div class="wrapper" data-barba="container" data-barba-namespace="home">
 			@@include('html/_header.htm',{})
-			<main class="page page_home" >
-				<section data-watch="navigator" data-watch-threshold="0.3" class="page__main-block main-block">
+			<main class="page page_home" data-watch data-watch-once>
+				<section class="page__main-block main-block">
 					<div class="main-block__container-main">
 						<div class="main-block__wrapper">
-							<h1 class="main-block__title title-section">Discover the world of cocktails!</h1>
-							<div class="main-block__subtitle">Enter the fascinating world of cocktails with a full understanding of the processes and history. Every meeting with us is a new adventure in the world of drinks.</div>
-							<div data-popup="#callback" class="main-block__btn button">ORDER A CALL</div>
+							<div class="main-block__body">
+								<h1 class="main-block__title title-section">Услуги садовника в Минске и пригороде!</h1>
+								<div class="main-block__subtitle">Мы точно знаем что требуется для создания и поддержания ваших садов. 
+									Наша миссия-сделать ваши участки, газоны, плодовые деревья, живые изгороди, красивыми и привлекательными.
+									</div>
+								<div data-popup="#callback" class="main-block__btn button">ЗАКАЗАТЬ ЗВОНОК</div>
+							</div>
+							
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.3" class="page__programm programm ">
-					<div data-watch data-watch-once  class="programm__container">
-						<h3  class="programm__intro title-intro">Course program</h3>
-						<h2 class="programm__title title-section">Master classes "Your own bartender"</h2>
-						<div class="programm__body body-programm">
-							<div class="body-programm__item">
-								<h4 class="body-programm__title title-item">A journey into the history of whiskey and its varieties.</h4>
-								<div class="body-programm__descr">Tasting: Experience three outstanding whiskeys and learn their stories.</div>
-								<div class="body-programm__image">
-									<img src="@img/home/programm/01.jpg" alt="programm">
-								</div>
+				<section class="page__welcom welcom-block">
+					<div class="welcom-block__container">
+						<div class="welcom-block__info">
+							<h2 class="welcom-block__title title-section">СадСервис</h2>
+							<hr>
+							<div class="welcom-block__descr">
+								Мы&nbsp;точно знаем что требуется для создания и&nbsp;поддержания ваших садов по&nbsp;доступной цене. Наша команда готова предоставить услуги садовника в&nbsp;Минске и&nbsp;пригороде. Наша миссия-сделать ваши участки, газоны, плодовые деревья, живые изгороди, красивыми и&nbsp;привлекательными.
 							</div>
-							<div class="body-programm__item">
-								<h4 class="body-programm__title title-item">Making cocktails</h4>
-								<div class="body-programm__descr">Become bartenders and create your own versions of whiskey-based cocktails.
-
-								</div>
-								<div class="body-programm__image">
-									<img src="@img/home/programm/02.jpg" alt="programm">
-								</div>
-							</div>
-							<div class="body-programm__item">
-								<h4 class="body-programm__title title-item">Program: Whiskey Sour, Old Fashioned, Manhattan</h4>
-								<div class="body-programm__descr">Each cocktail carries with it a piece of bar history.</div>
-								<div class="body-programm__image">
-									<img src="@img/home/programm/03.jpg" alt="programm">
-								</div>
+							<div class="welcom-block__descr">
+								И&nbsp;все это мы&nbsp;делаем, используя знания и&nbsp;профессиональный инструмент. Наша идея заключается в&nbsp;том, качественно выполненный заказ, делает клиентов счастливыми!
 							</div>
 						</div>
+					</div>
+				</section>
+				<section id="programm" class="page__programm programm ">
+					<div class="programm__container">
+						
+						<h2 class="programm__title title-section">Рекомендуемые услуги по садоводству</h2>
+						<div class="programm__body body-programm">
+							<div class="body-programm__item">
+								<div class="body-programm__item--header">
+									<h4 class="body-programm__title title-item">Стрижка газона <span>/от 20 руб.</span></h4>
+									<div class="body-programm__descr">
+										Нужно просто подстричь траву? Не&nbsp;беспокойтесь! Мы&nbsp;приедем, 
+										подстрижем и&nbsp;сделаем это эффективно. 
+									</div>
+								</div>
+								<a href="./about-us.html#01" data-target="01" class="body-programm__image">
+									<div class="body-programm__icon icon-share-arrow"></div>
+									<img src="@img/services/01.jpg" alt="programm">
+								</a>
+							</div>
+							<div class="body-programm__item">
+								<div class="body-programm__item--header">
+									<h4 class="body-programm__title title-item">Вычесывание газона, скарификация и аэрация <span>/от 50 руб.</span></h4>
+									<div class="body-programm__descr">Когда дело касается отличного газона, требуются знания, упорный труд и&nbsp;постоянный уход. 
+										Если вам нужно скарифицировать и аэрировать газон, дайте нам знать. 
+										Мы&nbsp;занимаемся этим уже давно и&nbsp;разберемся с&nbsp;этим в&nbsp;кратчайшие сроки.</div>
+								</div>
+								<a href="./about-us.html#03" class="body-programm__image">
+									<div class="body-programm__icon icon-share-arrow"></div>
+									<img src="@img/services/03.jpg" alt="programm">
+								</a>
+							</div>
+							<div class="body-programm__item">
+								<div class="body-programm__item--header">
+									<h4 class="body-programm__title title-item">Покос травы, бурьяна триммером <span>/от 15 руб.</span></h4>
+									<div class="body-programm__descr">В&nbsp;современном быстро меняющемся климате многим городским семьям трудно поддерживать порядок в&nbsp;саду. Угадайте что? Вам не&nbsp;нужно этого делать! Наслаждайтесь жизнью и&nbsp;позвольте нам сделать всю работу за&nbsp;вас.</div>
+								</div>
+								<a href="./about-us.html#02" class="body-programm__image">
+									<div class="body-programm__icon icon-share-arrow"></div>
+									<img src="@img/services/02.jpg" alt="programm">
+								</a>
+							</div>
+
+							<div class="body-programm__item">
+								<div class="body-programm__item--header">
+									<h4 class="body-programm__title title-item">Обработка деревьев в саду от болезней и вредителей</h4>
+									<div class="body-programm__descr">
+										Мы&nbsp;применяем современные препараты для защиты вашего сада и&nbsp;приусадебного участка.
+									</div>
+								</div>
+								<a href="./about-us.html#04" class="body-programm__image">
+									<div class="body-programm__icon icon-share-arrow"></div>
+									<img src="@img/services/04.jpg" alt="programm">
+								</a>
+							</div>
+
+							<div class="body-programm__item">
+								<div class="body-programm__item--header">
+									<h4 class="body-programm__title title-item">Стрижка живой изгороди <span>/от 50 руб.</span></h4>
+									<div class="body-programm__descr">Разросшиеся живые изгороди блокируют солнечный свет и&nbsp;доступ? Для этого вам может понадобиться кусторез! Или лучше свяжитесь по&nbsp;телефону с&nbsp;нами. Со&nbsp;всем этим новым модным оборудованием, которое у&nbsp;нас есть, у&nbsp;этих живых изгородей нет никаких шансов.</div>
+								</div>
+								<a href="./about-us.html#07" class="body-programm__image">
+									<div class="body-programm__icon icon-share-arrow"></div>
+									<img src="@img/services/07.jpg" alt="programm">
+								</a>
+							</div>
+
+							<div class="body-programm__item">
+								<div class="body-programm__item--header">
+									<h4 class="body-programm__title title-item">Борьба с&nbsp;сорняками <span>/от 25 руб.</span></h4>
+									<div class="body-programm__descr">Мы&nbsp;предлагает полный комплекс услуг по&nbsp;борьбе с&nbsp;сорняками и&nbsp;их&nbsp;устранению. 
+										Если у&nbsp;вас есть эти проблемы на&nbsp;газоне, эта услуга для вас.
+									</div>
+								</div>
+								<a href="./about-us.html#06" class="body-programm__image">
+									<div class="body-programm__icon icon-share-arrow"></div>
+									<img src="@img/services/06.jpg" alt="programm">
+								</a>
+							</div>
+
+							<div class="body-programm__item">
+								<div class="body-programm__item--header">
+									<h4 class="body-programm__title title-item">Обрезка сада, плодовых деревьев<span>/от 10 руб.</span></h4>
+									<div class="body-programm__descr">Обладая опытом в&nbsp;той сфере, где это необходимо, мы&nbsp;сделаем ваш сад привлекательным и&nbsp;ухоженным</div>
+								</div>
+								<a href="./about-us.html#05" class="body-programm__image">
+									<div class="body-programm__icon icon-share-arrow"></div>
+									<img src="@img/services/05.jpg" alt="programm">
+								</a>
+							</div>
+
+							<div class="body-programm__item">
+								<div class="body-programm__item--header">
+									<h4 class="body-programm__title title-item">Очистка желобов и водостоков <span>/от 60 руб.</span></h4>
+									<div class="body-programm__descr">
+										Когда речь идёт об&nbsp;обслуживании жилого дома, бани или хозяйственных построек. Мы&nbsp;предоставляем услуги высокого стандарта по&nbsp;разумной цене.
+									</div>
+								</div>
+								<a href="./about-us.html#08" class="body-programm__image">
+									<div class="body-programm__icon icon-share-arrow"></div>
+									<img src="@img/services/08.jpg" alt="programm">
+								</a>
+							</div>
+							<div class="body-programm__item">
+								<div class="body-programm__item--header">
+									<h4 class="body-programm__title title-item">Уборка снега (лопатой)<span>/от 50 руб.</span></h4>
+									<div class="body-programm__descr">В&nbsp;отличие от&nbsp;бабочек мы&nbsp;не&nbsp;впадаем в&nbsp;спячку 
+										в&nbsp;зимний сезон. В&nbsp;это время мы&nbsp;предлагаем услуги, которые идеально подходят для выполнения в&nbsp;этот холодный период.</div>
+								</div>
+								<a href="./about-us.html#09" class="body-programm__image">
+									<div class="body-programm__icon icon-share-arrow"></div>
+									<img src="@img/services/09.jpg" alt="programm">
+								</a>
+							</div>
+						</div>
+						<button data-popup="#callback" class="body-gift__btn button">ЗАКАЗАТЬ ЗВОНОК</button>
 					</div> 
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.3" class="page__about-kurs about-kurs">
+				
+
+				<section id="gift" class="page__gift gift">
+					<div class="gift__container">
+						<h2 class="gift__title title-section">Почему стоит выбрать нас</h2>
+						<div class="gift__body body-gift">
+							<div class="body-gift__item">
+								<div class="body-gift__image">
+									<img src="@img/svg-icon/tools.svg" alt="tools">
+								</div>
+								<h4 class="body-gift__title title-item">У нас есть весь необходимый садовый инвентарь и
+									инструменты.</h4>
+							</div>
+
+							<div class="body-gift__item">
+								<div class="body-gift__image">
+									<img src="@img/svg-icon/check.svg" alt="check">
+								</div>
+								<h4 class="body-gift__title title-item">Мы любим свою работу и выполняем её качественно.</h4>
+							</div>
+
+							<div class="body-gift__item gift3">
+								<div class="body-gift__image">
+									<img src="@img/svg-icon/clock.svg" alt="clock">
+								</div>
+								<h4 class="body-gift__title title-item">Работу выполняем сами, без посредников. В кратчайшие
+									сроки.</h4>
+							</div>
+
+							<div class="body-gift__item gift3">
+								<div class="body-gift__image">
+									<img src="@img/svg-icon/wallet.svg" alt="wallet">
+								</div>
+								<h4 class="body-gift__title title-item">Работаем за наличный и безналичный расчет.</h4>
+							</div>
+
+							<div class="body-gift__item gift3">
+								<div class="body-gift__image">
+									<img src="@img/svg-icon/cash.svg" alt="cash">
+								</div>
+								<h4 class="body-gift__title title-item">Стоимость наших услуг конкурентоспособна.</h4>
+							</div>
+
+							<div class="body-gift__item gift3">
+								<div class="body-gift__image">
+									<img src="@img/svg-icon/graph.svg" alt="graph">
+								</div>
+								<h4 class="body-gift__title title-item">Используем передовые знания и методы в работе.</h4>
+							</div>
+						</div>
+						<!-- <button data-popup="#callback" class="body-gift__btn button">ORDER A CALL</button> -->
+					</div>
+				</section>
+
+				<section class="section-title">
+					<div class="section-title__container">
+						<h2 class="section-title__title title-section">Доверяй профессионалам</h2>
+					</div>
+				</section>
+
+				<section class="page__corpo-slider corpo-slider">
+					<div class="corpo-slider__container">
+						<!-- Оболонка слайдера -->
+						<div class="corpo-slider__slider swiper">
+							<!-- Частина слайдера, що рухається -->
+							<div class="corpo-slider__wrapper swiper-wrapper">
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/services/01.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/services/02.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/services/03.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/services/04.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/services/05.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/services/06.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/services/07.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/services/08.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/home/programm/11.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/home/programm/12.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/home/programm/13.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/home/programm/14.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/home/programm/15.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/home/programm/16.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/home/programm/17.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/home/programm/18.jpg" alt="img01">
+										</a>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="corpo-slider__slide swiper-slide">
+									<div class="swiper-slide__body">
+										<a href="#" class="swiper-slide__item">
+											<img src="@img/home/programm/19.jpeg" alt="img01">
+										</a>
+									</div>
+								</div>
+							</div>
+							<!-- Якщо потрібна пагінація -->
+							<div class="swiper-pagination"></div>
+							<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
+							<button type="button" class="swiper-button-prev corpo-slider__prev icon-Right-chevron"></button>
+							<button type="button" class="swiper-button-next corpo-slider__next icon-Right-chevron"></button>
+							
+						</div>
+					</div>
+
+				</section>
+				
+
+				<section class="section-title">
+					<div class="section-title__container">
+						<h2 class="section-title__title title-section">Остались вопросы?</h2>
+					</div>
+				</section>
+
+
+
+
+
+
+
+
+				<!-- <section data-watch="navigator" data-watch-threshold="0.3" class="page__about-kurs about-kurs">
 					<div data-watch data-watch-once class="about-kurs__container">
 						<h3 class="about-kurs__intro title-intro">About the course</h3>
 						<h2 class="about-kurs__title title-section">Details and conditions</h2>
@@ -78,37 +409,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="page__gift gift">
-					<div class="gift__container">
-						<h2 class="gift__title title-section">Give a gift that will be remembered!</h2>
-						<div class="gift__body body-gift">
-							<div class="body-gift__item">
-								<div class="body-gift__image">
-									<img src="@img/home/programm/01.jpg" alt="gift1">
-								</div>
-								<h4 class="body-gift__title title-item">Gift for loved ones</h4>
-								<div class="body-gift__descr">Give your loved ones and friends an unforgettable experience! We have the opportunity to purchase gift certificates for master classes.</div>
-							</div>
-
-							<div class="body-gift__item">
-								<div class="body-gift__image">
-									<img src="@img/home/programm/02.jpg" alt="gift2">
-								</div>
-								<h4 class="body-gift__title title-item">Corporate event</h4>
-								<div class="body-gift__descr">Looking for a unique idea for a corporate event? We offer individual conditions for corporate meetings. Make your event unforgettable!</div>
-							</div>
-
-							<div class="body-gift__item gift3">
-								<div class="body-gift__image">
-									<img src="@img/home/programm/03.jpg" alt="gift3">
-								</div>
-								<h4 class="body-gift__title title-item">World of drinks</h4>
-								<div class="body-gift__descr">Learn like a real bartender! In our master classes, you will not only learn about the world of drinks, but also learn how to make cocktails professionally and with confidence behind the bar.</div>
-							</div>
-						</div>
-						<button data-popup="#callback" class="body-gift__btn button">ORDER A CALL</button>
-					</div>
-				</section>
+				
 				<section data-watch  class="page__booking booking">
 					<div class="booking__container" data-watch="navigator" data-watch-threshold="0.3">
 						<h2 class="booking__title title-section">An ideal place for corporate events!</h2>
@@ -151,55 +452,52 @@
 							</div>
 						</div>
 					</div>
-				</section>
+				</section> -->
+
+
 				<section data-watch class="page__contacts contacts">
 					<div class="contacts__container">
 						<div class="contacts__image">
 							<img src="@img/home/contacts/bg-c.jpg" alt="contacts">
 						</div>
 						<div class="contacts__wrapper wrapper-contacts">
-							<div class="wrapper-contacts__intro">We will answer within 5 minutes</div>
-							<h3 class="wrapper-contacts__title">Contact us</h3>
-							<div class="wrapper-contacts__descr">Leave a request and we will contact you</div>
+							<div class="wrapper-contacts__intro">Мы ответим в течение 5 минут</div>
+							<h3 class="wrapper-contacts__title">Свяжитесь с нами</h3>
+							<div class="wrapper-contacts__descr">Оставьте заявку, и мы свяжемся с вами</div>
 							<hr>
 							<div class="wrapper-contacts__form">
 								<form data-ajax data-validate data-required data-popup-message="#thanks" method="POST" action="files/sendmail/sendmail.php" enctype="multipart/form-data" class="tab-body-form__form form">
 									<div class="form-form">
 
 										<div class="form__item first">
-											<label for="first-name" class="form__label">First Name*</label>
-											<input type="text" id="first-name" name="first-name"  placeholder="Your first name" class="form__input input " required> 
+											<label for="first-name" class="form__label">Имя*</label>
+											<input type="text" id="first-name" name="first-name"  placeholder="Ваше имя" class="form__input input " required> 
 										</div> 
 
 										<div class="form__item last">
-											<label for="last-name" class="form__label">Last Name*</label>
-											<input type="text" id="last-name" name="last-name"  placeholder="Your last name" class="form__input input " required> 
+											<label for="last-name" class="form__label">Фамилия*</label>
+											<input type="text" id="last-name" name="last-name"  placeholder="Ваша фамилия" class="form__input input " required> 
 										</div>
 
 										<div class="form__item email">
-											<label for="email" class="form__label">Email address</label>
-											<input required id="email" type="email" name="email" placeholder="Your working email" class="form__input input " >
+											<label for="email" class="form__label">Адрес электронной почты</label>
+											<input required id="email" type="email" name="email" placeholder="Ваш рабочий адрес электронной почты" class="form__input input " >
 										</div>
 
 										<div class="form__item phone">
-											<label for="phone" class="form__label">Phone*</label>
-											<input required type="tel" id="phone" name="phone" placeholder="Your phone number" class="form__input input">
+											<label for="phone" class="form__label">Телефон*</label>
+											<input required type="tel" id="phone" name="phone" placeholder="Ваш номер телефона" class="form__input input">
 										</div>
 
-										
-
-										
 									</div>
 
-									 
-
 									 <div class="form__item ">
-										<label for="message" class="form__label">Notes</label>
-										<textarea id="message" name="message" placeholder="Your message" class="form__input input"></textarea>
+										<label for="message" class="form__label">Примечания</label>
+										<textarea id="message" name="message" placeholder="Ваше сообщение" class="form__input input"></textarea>
 									</div>
 
 									
-									<button class="wrapper-contacts__btn button">SUBMIT</button>
+									<button class="wrapper-contacts__btn button">ОТПРАВИТЬ</button>
 								</form>
 							</div>
 						</div>
@@ -210,6 +508,7 @@
 			@@include('html/_footer.htm',{})
 		</div>
 		@@include('html/_popup.htm',{})
+		@@include('html/_cookie-body.htm',{})
 		@@include('html/_js.htm',{})
 	
 	</body>
